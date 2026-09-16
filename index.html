@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تقرير رسمي — مؤسسة يمان الخير لإدارة شركة فقيه</title>
+<style>
+  :root{
+    --ink:#1a2332; --muted:#5a6678; --line:#e3e8ef; --bg:#f4f6f9; --card:#ffffff;
+    --brand:#0d3b66; --accent:#c8102e; --ok:#1e7d43;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"Segoe UI", Tahoma, "Noto Naskh Arabic", Arial, sans-serif; background:var(--bg); color:var(--ink); line-height:2;}
+  .wrap{max-width:960px; margin:0 auto; padding:24px 16px 80px;}
+
+  header.hero{background:linear-gradient(135deg, var(--brand) 0%, #14508a 100%); color:#fff; border-radius:16px; padding:36px 28px; margin-bottom:28px; box-shadow:0 6px 24px rgba(13,59,102,.25);}
+  header.hero h1{font-size:1.6rem; margin-bottom:10px; line-height:1.6;}
+  header.hero .sub{color:#cfe0f2; font-size:1.02rem;}
+  .meta-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin-top:18px;}
+  .meta-grid .cell{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:10px 14px; font-size:.92rem;}
+  .meta-grid .cell b{display:block; color:#9fc3e8; font-size:.8rem; font-weight:600;}
+
+  .alert{background:#fdf3f4; border:1px solid #f2c7cd; border-right:5px solid var(--accent); border-radius:10px; padding:16px 20px; margin:22px 0; font-size:1.02rem;}
+
+  section{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:26px 26px 20px; margin-bottom:24px; box-shadow:0 2px 8px rgba(20,40,70,.05);}
+  section h2{color:var(--brand); font-size:1.3rem; margin-bottom:14px; padding-bottom:10px; border-bottom:2px solid var(--line); display:flex; align-items:center; gap:10px;}
+  section h2 .num{background:var(--brand); color:#fff; width:34px; height:32px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;}
+  section h3{color:var(--brand); font-size:1.06rem; margin:18px 0 8px;}
+  p{margin-bottom:10px; font-size:1rem;}
+  ul,ol{margin:0 22px 12px 0;}
+  li{margin-bottom:7px;}
+
+  .praise{background:#f6fbf7; border:1px solid #d5ead9; border-right:5px solid var(--ok); border-radius:10px; padding:14px 18px; margin:12px 0;}
+
+  .evidence{border:1px solid var(--line); border-radius:12px; padding:16px; margin:14px 0; background:#fbfcfe;}
+  .evidence .tag{display:inline-block; background:var(--accent); color:#fff; border-radius:6px; padding:2px 10px; font-size:.78rem; font-weight:700; margin-bottom:8px;}
+  .evidence .src{color:var(--muted); font-size:.85rem; margin-top:6px;}
+
+  .gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:14px 0;}
+  figure{background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.06);}
+  figure img{width:100%; height:230px; object-fit:cover; display:block; cursor:zoom-in; transition:transform .25s;}
+  figure img:hover{transform:scale(1.02);}
+  figcaption{padding:9px 12px; font-size:.84rem; color:var(--muted); background:#fafbfd; border-top:1px solid var(--line);}
+
+  video{width:100%; max-height:480px; border-radius:10px; background:#000; display:block; margin:8px 0;}
+
+  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:.95rem; background:#fff;}
+  th{background:var(--brand); color:#fff; padding:10px 12px; text-align:right; font-weight:600;}
+  td{padding:10px 12px; border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:#f7fafd;}
+  .diff{color:var(--accent); font-weight:700;}
+
+  .quote{background:#f2f7fc; border-right:4px solid var(--brand); border-radius:8px; padding:12px 18px; margin:10px 0; font-size:1rem; color:#27425f;}
+  .quote .who{font-size:.8rem; color:var(--muted); display:block; margin-top:4px;}
+
+  .req{display:flex; gap:12px; align-items:flex-start; background:#f6fbf7; border:1px solid #d5ead9; border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .req .n{background:var(--ok); color:#fff; min-width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; margin-top:2px;}
+  .req b{color:var(--ok);}
+
+  .footnote{font-size:.85rem; color:var(--muted); background:#fffdf3; border:1px solid #f0e6c8; border-radius:8px; padding:12px 16px; margin-top:14px;}
+
+  .sign{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-top:22px; padding-top:16px; border-top:2px dashed var(--line); color:var(--muted); font-size:.95rem;}
+
+  #lb{position:fixed; inset:0; background:rgba(10,15,25,.92); display:none; align-items:center; justify-content:center; z-index:99; cursor:zoom-out; padding:20px;}
+  #lb img{max-width:94vw; max-height:92vh; border-radius:8px; box-shadow:0 8px 40px rgba(0,0,0,.6);}
+  #lb.on{display:flex;}
+
+  @media print{ header.hero{border-radius:0;} section{box-shadow:none; break-inside:avoid;} figure img{height:180px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>تقرير رسمي موثّق — تسلّل بضاعة «فقيه» المبرّد إلى سوق المدينة المنورة من خارج قناة التوزيع الرسمية</h1>
+  <div class="sub">مقدّم من مؤسسة يمان الخير — الوكيل الموزّع المعتمد لمنتجات شركة مزارع فقيه للدواجن في منطقة المدينة المنورة</div>
+  <div class="meta-grid">
+    <div class="cell"><b>موجّه إلى</b>الإدارة العامة — شركة مزارع فقيه للدواجن (س.م.ج.س.ج)</div>
+    <div class="cell"><b>تاريخ التقرير</b>16 سبتمبر 2026م</div>
+    <div class="cell"><b>بداية المشكلة</b>مطلع يوليو 2026م — <b style="color:#ffd6dc;">وما زالت مستمرة إلى اليوم</b></div>
+    <div class="cell"><b>الأدلة المرفقة</b>10 مقاطع مصوّرة بصوتها + 7 صور + لوحة أسعار ميدانية</div>
+  </div>
+</header>
+
+<div class="alert">
+⚠️ <b>خلاصة التقرير:</b> بضاعة «فقيه» المبرّد تتوفر في سوق المدينة المنورة من مصدر خارجي بأسعار <b>أقل من السعر الرسمي المفوتر للوكيل بما يقارب عشرة ريالات في وزن الكرتون الواحد</b>، ما أدى إلى توقّف مبيعات المطاعم عن الوكيل الرسمي، وتعثّر تحصيل المبالغ المستحقة، وتراكم بضاعة راكدة تقترب صلاحيتها من الانتهاء — مع أدلة مرئية وصوتية تربط هذا التوريد بالموزع المعروف بـ«الجبالي»، والمشكلة <b>مستمرة حتى تاريخ إعداد هذا التقرير</b>.
+</div>
+
+<section>
+  <h2><span class="num">1</span> الملخص التنفيذي</h2>
+  <p>نقدّم لحضرتكم هذا التقرير بوصفنا الوكيل الموزّع المعتمد لمنتجات الشركة في المدينة المنورة، التزامًا بواجب الإبلاغ، وبحرصٍ على مصلحة الطرفين.</p>
+  <p>فمنذ مطلع شهر يوليو 2026م، وتحديدًا حين بدأت التشغيلات تصل المدينة من مصادر خارجية، ظهرت في أسواق المدينة المنورة كميات من منتجات «فقيه» المبرّد بمختلف الأوزان (800 و900 و1000 و1200 غرام) تُباع للمطاعم والمحلات بأسعار تقل عن السعر الرسمي المفوتر لنا، بفارق يصل إلى نحو عشرة ريالات في وزن الكرتون الواحد. وقد نتج عن ذلك:</p>
+  <ul>
+    <li><b>تعذّر البيع:</b> البضاعة اليومية التي نلتزم بسحبها من الشركة تراكمت في مخازننا المبرّدة.</li>
+    <li><b>تعثّر التحصيل:</b> مطاعم قائمة على السداد توقفت عن الشراء منّا أو تأجّلت في السداد، إذ لم يعد الشراء من الوكيل الرسمي مجديًا لها.</li>
+    <li><b>خطر تعاقدي:</b> استمرار الوضع يهدد استمرارية عقد التوزيع ومركزنا المالي، مع بقاء التزامنا الكامل تجاه الشركة.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">2</span> خلفية العلاقة التعاقدية</h2>
+  <p>مؤسسة يمان الخير وكيل توزيع رسمي لمنتجات فقيه المبرّد في المدينة المنورة بموجب عقد توزيع ساري، والتزام يومي بسحب البضاعة من الشركة بالأسعار الرسمية، وقد عملنا بهذه الصفة سنوات طويلة بثقة متبادلة دون مشكلات جوهرية.</p>
+  <div class="praise">
+    <b>تقدير وتثمين:</b> ولا يفوتنا أن نسجّل هنا موقف السيد/ <b>تامر سعيد</b>، مدير عام الموزعين بالشركة، الذي وقف معنا طوال هذه الفترة، وواكب الموضوع بكل اهتمام ومتابعة، ولم يُقصّر في تواصله معنا وإنصاتنا. نثمن له هذا الموقف عالي التقدير، ونعتبره نموذجًا لما يتمناه أي وكيل من إدارة الشركة.
+  </div>
+  <p>غير أن استمرار المشكلة إلى اليوم، رغم علمه ومتابعته وتواصله المتكرر معنا، يؤكد لنا أن جذرها أعلى من صلاحيات الإدارة التنفيذية، وأن معالجتها تتطلب قرارًا مباشرًا من الإدارة العليا، وهو ما دفعنا إلى إعداد هذا التقرير ورفعه لحضرتكم.</p>
+</section>
+
+<section>
+  <h2><span class="num">3</span> الوقائع والأدلة الموثّقة</h2>
+  <p class="footnote" style="margin-top:0;">جميع المقاطع بصيغتها الأصلية كما استُلمت بتاريخ 16/09/2026م، والطوابع الزمنية مذكورة داخل كل مقطع. التفريغ الصوتي أُنجز آليًا كقراءة أولية لأغراض الإحالة، والصوت الأصلي هو المرجع المعتمد.</p>
+
+  <h3>1) إغراق المحلات ببضاعة فقيه من خارج قناة التوزيع</h3>
+  <p>تُظهر الجولات الميدانية الموثقة بالمقاطع (1، 2، 3، 4) ثلاجات عرض في محلات متعددة بالمدينة المنورة مفروشة بالكامل بأكياس «فقيه بريميوم تشيلد تشيكن» بأوزانها المختلفة، بما يؤكد توفر البضاعة في السوق بكميات كبيرة من مصدر آخر غير الوكيل الرسمي.</p>
+  <div class="evidence">
+    <span class="tag">مقطع 1</span> ثلاجات عرض في محلات المدينة مفروشة بالكامل بأكياس فقيه المبرّد — دليل على وفرة العرض خارج قناة التوزيع الرسمية. <span class="badge" style="background:#eaf1f9;color:#0d3b66;border:1px solid #c9dcf0;border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:600;">36 ثانية</span>
+    <video controls preload="metadata"><source src="videos/WhatsApp_Video_2026-09-16_at_2.17.27_PM---42d680b4-2555-482a-b847-c55b83ce1e5a.mp4" type="video/mp4"></video>
+  </div>
+  <div class="evidence">
+    <span class="tag">مقطع 3</span> جولة توثيقية في أحد المحلات بثلاجات زرقاء مليئة بأكياس فقيه، ويشرح المتحدث في الصوت المصاحب كيف وصلت البضاعة إلى المحلات بأسعار أقل من السعر الرسمي، وأن أصحاب المحلات يبيعون بأسعار متنافسة مع مصدرها الخارجي. <span class="badge" style="background:#eaf1f9;color:#0d3b66;border:1px solid #c9dcf0;border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:600;">78 ثانية</span>
+    <video controls preload="metadata"><source src="videos/WhatsApp_Video_2026-09-16_at_2.17.46_PM---a4809db0-b7f0-43d2-9f87-9b288dc722b9.mp4" type="video/mp4"></video>
+    <div class="quote">«…وكل حاجة موجودة في المحلات… لما يتنزل لهم أرخص…» <span class="who">— مقتطف من التعليق الصوتي للمقطع (ت 56–72 ث)</span></div>
+  </div>
+
+  <h3>2) بضاعة راكدة تقترب صلاحيتها من الانتهاء</h3>
+  <p>يوثّق المقطع (7) داخل أحد المحلات وجود كميات وصلت إلى مراحل متقدمة من الصلاحية بفعل الركود، وقد أرفقنا صورة مقرّبة لرابط الإغلاق الأصفر على كيس من إنتاج الشركة يظهر عليه تاريخ انتهاء 31-08 — وهو أثر مباشر لركود حركة البضاعة وانقلاب السوق نحو المصدر الأرخص.</p>
+  <div class="evidence">
+    <span class="tag">مقطع 7</span> توثيق داخل أحد المحلات يبيّن كميات راكدة على وشك انتهاء الصلاحية. <span class="badge" style="background:#eaf1f9;color:#0d3b66;border:1px solid #c9dcf0;border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:600;">42 ثانية</span>
+    <video controls preload="metadata"><source src="videos/WhatsApp_Video_2026-09-16_at_2.20.13_PM---1fd8e644-960f-4cf5-bce3-d9be0ba0a6ab.mp4" type="video/mp4"></video>
+  </div>
+  <div class="gallery">
+    <figure><img src="images/13_تاريخ_الانتهاء_31_08.jpg" alt="تاريخ الانتهاء 31-08 على كيس فقيه"><figcaption>لقطة مقرّبة: رابط الإغلاق الأصفر بتاريخ انتهاء 31-08 — توثيق تتبع التواريخ في السوق</figcaption></figure>
+  </div>
+
+  <h3>3) توريد ليلي لصناديق فقيه خارج ساعات العمل الرسمية</h3>
+  <p>يوثّق المقطعان (9) و(10) — المصوّران ليلًا — عملية تفريغ صناديق كاملة من أكياس فقيه المبرّد الأصلية من مركبة بيضاء إلى داخل أحد المحلات، وقد ورد في التعليق الصوتي المصاحب ذكر اسم «الجبالي» صراحة في سياق التوريد، وهو الموزع الذي تعود إليه — بحسب المعلومات الرائجة في السوق — هذه الحملة التسعيرية، ولديه محل معروف في المدينة.</p>
+  <div class="evidence">
+    <span class="tag">مقاطع 9 و10 — تصوير ليلي</span>
+    <div class="gallery" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+      <figure><img src="images/09_شاحن_صناديق_فقيه_ليل.jpg" alt="تفريغ ليلي"><figcaption>حمل صندوق فقيه من المركبة ليلًا (ت 2ث)</figcaption></figure>
+      <figure><img src="images/10_حمل_الصناديق_للمحل.jpg" alt="حمل الصناديق"><figcaption>إدخال الصناديق إلى المحل (ت 4ث)</figcaption></figure>
+    </div>
+    <video controls preload="metadata"><source src="videos/WhatsApp_Video_2026-09-16_at_2.22.25_PM---4a7e552e-7606-4a9d-a01e-85a4b964f8b9.mp4" type="video/mp4"></video>
+  </div>
+
+  <h3>4) الإشارة الصوتية إلى مصدر التسعير</h3>
+  <div class="evidence">
+    <span class="tag">مقطع 6 — أطول الجولات التوثيقية</span> يشمل الجول عدة ثلاجات في أكثر من محل، وورد في التعليق الصوتي ذكر اسم «محمد الجبالي» مرتبطًا بإنزال البضاعة بسعر منخفض (900)، بما يتوافق مع ما ورد في الفقرة السابقة ويعزّز الحاجة إلى تحقيق مصدري من قبل الشركة. <span class="badge" style="background:#eaf1f9;color:#0d3b66;border:1px solid #c9dcf0;border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:600;">74 ثانية</span>
+    <video controls preload="metadata"><source src="videos/WhatsApp_Video_2026-09-16_at_2.19.16_PM---fda80af9-7595-4061-9890-4d0e1a974651.mp4" type="video/mp4"></video>
+  </div>
+
+  <h3>5) المركبة الموثقة</h3>
+  <div class="evidence">
+    <span class="tag">صورة</span> مركبة إيسوزو بيضاء وردت في سياق التوثيق الميداني المرتبط بحركة البضاعة.
+    <div class="gallery">
+      <figure><img src="images/12_المركبة_8857.jpg" alt="مركبة إيسوزو"><figcaption>إيسوزو REWARD-NP — لوحة 8857 ح ر أ (HRA)</figcaption></figure>
+    </div>
+  </div>
+
+  <h3>6) البضاعة المتداولة من إنتاج الشركة نفسها</h3>
+  <p>تُثبت اللقطات المقرّبة المرفقة أن البضاعة المتداولة في السوق تحمل عبوات وبيانات الشركة الأصلية (عبوة 800 غرام، بيانات المصنع، الملصق الأصفر لرابط الإغلاق)، أي أنها من إنتاج فقيه حقيقي وليست بدائل أو تقليد، مما يستلزم تتبع مصدر تسرّبها من داخل سلسلة التوريد.</p>
+  <div class="gallery">
+    <figure><img src="images/14_عبوة_فقيه_الأصلية.jpg" alt="عبوة فقيه"><figcaption>فقيه بريميوم تشيلد تشيكن 800 غرام — الوجه الأمامي للعبوة</figcaption></figure>
+    <figure><img src="images/15_ثلاجة_الذهبي_بفقيه.jpg" alt="ثلاجة الذهبي"><figcaption>منتجات فقيه داخل ثلاجة تحمل علامة «الذهبي Golden Chicken» — تداول خارج الوكالة الرسمية</figcaption></figure>
+    <figure><img src="images/01_ثلاجة_محل_مليئة_فقيه.jpg" alt="ثلاجة محل"><figcaption>ثلاجة محل مفروشة بالكامل بأكياس فقيه (من المقطع 1)</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">4</span> لوحة الأسعار — الرسمي مقابل المتداول</h2>
+  <p>نرفق الورقة الأصلية بلوحة الأسعار (مكتوبة بخط اليد) كما وصلتنا من السوق، والتي توضح الفرق بين السعر الرسمي المفوتر لنا والسعر المتداول من المصدر الخارجي:</p>
+  <div class="gallery">
+    <figure><img src="images/11_لائحة_الاسعار_خط_اليد.jpg" alt="لوحة الأسعار" style="height:auto; max-height:420px; object-fit:contain;"><figcaption>لوحة الأسعار الأصلية — بخط اليد (مرفقة كما استُلمت دون تعديل)</figcaption></figure>
+  </div>
+  <table>
+    <thead><tr><th>الوزن</th><th>السعر الرسمي المفوتر للوكيل (ريال/قطعة)</th><th>السعر المتداول في السوق (ريال/قطعة)</th><th>الفرق لكل قطعة</th></tr></thead>
+    <tbody>
+      <tr><td>800 غرام</td><td>13.00</td><td>11.50</td><td class="diff">1.50−</td></tr>
+      <tr><td>900 غرام</td><td>13.75</td><td>12.50</td><td class="diff">1.25−</td></tr>
+      <tr><td>1000 غرام</td><td>14.50</td><td>13.50</td><td class="diff">1.00−</td></tr>
+      <tr><td>1200 غرام</td><td>15.50</td><td>14.50</td><td class="diff">1.00−</td></tr>
+    </tbody>
+  </table>
+  <p>ويُلاحظ أن الفرق على مستوى الكرتون (10 قطع) يصل إلى ما يقارب 10 إلى 18 ريالًا حسب الوزن، وهو ما يتطابق مع ما أوصلنا إليه الوسط السوقي من اختلاف يقارب <b>10 ريالات في كل وزن عند المطاعم</b>، وهو الفرق الذي أفقدنا القدرة على المنافسة تمامًا.</p>
+  <div class="footnote">نلتمس من إدارتكم الموقّرة اعتماد الأرقام الرسمية من النظام المحاسبي للشركة ومطابقتها مع ما ورد في الورقة؛ إذ نرفق الورقة الأصلية بصورتها الكاملة دون أي تعديل، وقراءتنا أعلاه قراءة مبدئية قابلة للتدقيق.</div>
+</section>
+
+<section>
+  <h2><span class="num">5</span> الأثر المادي والتشغيلي على الوكيل</h2>
+  <ol>
+    <li><b>تجميد رأس المال:</b> التزامنا اليومي بالسحب من الشركة مع عجز البيع يراكم مخزونًا مبرّدًا يتقادم ويهدد صلاحيته (الشاهد 2).</li>
+    <li><b>تعثّر التحصيل:</b> مطاعم كانت تسدّد لنا بانتظام توقفت أو أجّلت السداد، لأن الشراء منّا لم يعد في صالحها بعد ظهور المصدر الأرخص.</li>
+    <li><b>تشويه السوق:</b> اعتاد العميل السعر المخفّض، وأي عودة للتسعير الرسمي ستقابل بمقاومة سوقية رُكِّبت من خارج قناة التوزيع النظامية.</li>
+    <li><b>الخطر التعاقدي:</b> استمرار هذا الوضع يعني إفقار الوكيل الرسمي اقتصاديًا مع بقاء التزامه الكامل تجاه الشركة، وهو خلل جوهري في عدالة علاقة التوزيع.</li>
+  </ol>
+</section>
+
+<section>
+  <h2><span class="num">6</span> المطلوب من الإدارة الكريمة</h2>
+  <div class="req"><div class="n">1</div><div><b>فتح تحقيق مصدري عاجل:</b> بتتبّع أرقام التشغيلات وأكواد الإنتاج للدفعات المتداولة في سوق المدينة المنورة خلال الفترة من يوليو 2026م حتى تاريخه، لتحديد المصدر الذي تسرّبت إليه البضاعة.</div></div>
+  <div class="req"><div class="n">2</div><div><b>تدقيق حساب الموزع أو الجهة</b> المرتبطة بحركة البضاعة الواردة من خارج المدينة خلال الفترة المذكورة، وبخاصة ما اتصل بالاسم الوارد في الأدلة الصوتية («الجبالي»).</div></div>
+  <div class="req"><div class="n">3</div><div><b>تفعيل إجراءات رقابية:</b> تفعيل رقم تسلسلي على كل عبوة أو سلة يُربط بالوكيل المستلم، وحصر توريد كميات المدينة في الوكيل المعتمد حصرًا.</div></div>
+  <div class="req"><div class="n">4</div><div><b>معالجة الأثر:</b> النظر في جدولة أو خصم تعويضي عن الكميات الراكدة المتقادمة، ووضع خطة انتقالية تصحّح أسعار السوق دون أن تُسقط العبء كله على الوكيل الرسمي.</div></div>
+  <div class="req"><div class="n">5</div><div><b>تشكيل لجنة أو اجتماع عاجل</b> بمشاركة إدارة الموزعين (السيد/ تامر سعيد) والوكيل، لعرض الأدلة الأصلية كاملة ووضع خطة عمل واضحة محددة المدة.</div></div>
+</section>
+
+<section>
+  <h2><span class="num">7</span> قائمة المرفقات</h2>
+  <table>
+    <thead><tr><th>#</th><th>المرفق</th><th>الوصف</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>لوحة الأسعار بخط اليد</td><td>سعر الشركة مقابل سعر السوق (أصلية)</td></tr>
+      <tr><td>2</td><td>صورة المركبة</td><td>إيسوزو، لوحة 8857 ح ر أ</td></tr>
+      <tr><td>3</td><td>صور السلال والبضاعة</td><td>فقيه مبرّد في سلال التوزيع الأصلية</td></tr>
+      <tr><td>4</td><td>صورة العبوة الأمامية</td><td>فقيه بريميوم تشيلد تشيكن 800 غرام</td></tr>
+      <tr><td>5</td><td>صورة تاريخ الانتهاء</td><td>رابط الإغلاق الأصفر 31-08</td></tr>
+      <tr><td>6</td><td>صورة بيانات العبوة الخلفية</td><td>بيانات الشركة والمصنع والوزن</td></tr>
+      <tr><td>7</td><td>صورة الثلاجة المخالفة</td><td>منتجات فقيه في ثلاجة علامة أخرى</td></tr>
+      <tr><td>8–17</td><td>المقاطع المصوّرة (10 مقاطع)</td><td>الجولات الميدانية والتفريغ الليلي بصوتها الأصلي</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="num">8</span> الإقرار والأمانة</h2>
+  <p>نقر بأن جميع المقاطع والصور المرفقة أصلية وغير معدّلة، وأن ما ورد فيها من أسماء وأسعار هو ما قيل وظهر فعلًا، ونتحمّل المسؤولية القانونية عن صحة ذلك، ونؤكد استعدادنا الكامل لتسليم الملفات الأصلية للإدارة متى طُلب منّا ذلك، وللتنسيق الفوري في أي جولة ميدانية مشتركة تُرغب الإدارة في القيام بها.</p>
+  <div class="sign">
+    <div><b>مقدّم التقرير:</b><br>مؤسسة يمان الخير — الوكيل الموزّع المعتمد<br>المدينة المنورة</div>
+    <div><b>التاريخ:</b> 16 سبتمبر 2026م</div>
+    <div><b>التوقيع:</b> ____________________</div>
+  </div>
+</section>
+
+<p class="footnote">أُعدّ هذا التقرير لغرض الإحالة إلى الإدارة العامة للشركة، وهو مستند إحالة أولي؛ والملفات الأصلية هي المرجع النهائي.</p>
+
+</div>
+
+<div id="lb"><img id="lbimg" alt=""></div>
+<script>
+  document.querySelectorAll('figure img').forEach(function(im){
+    im.addEventListener('click', function(){
+      var lb=document.getElementById('lb');
+      document.getElementById('lbimg').src=im.src;
+      lb.classList.add('on');
+    });
+  });
+  document.getElementById('lb').addEventListener('click', function(){
+    this.classList.remove('on');
+  });
+</script>
+</body>
+</html>
