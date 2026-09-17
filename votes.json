@@ -1,1 +1,15 @@
-{}
+{
+  "abuabdulaziz": {
+    "name": "ابو عبدالعزيز",
+    "votes": {
+      "main": {
+        "choice": "a"
+      },
+      "r1": {
+        "choice": "أدعم",
+        "type": "a"
+      }
+    },
+    "time": "12:50"
+  }
+}
