@@ -1,1 +1,118 @@
-{}
+{
+  "abusayf": {
+    "name": "ابو سيف",
+    "votes": {
+      "main": {
+        "choice": "a"
+      },
+      "r1": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r2": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r3": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r4": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r5": {
+        "choice": "أدعم",
+        "type": "a"
+      }
+    },
+    "time": "٠٢:٠٣ م"
+  },
+  "abulumar": {
+    "name": "ابو لمار",
+    "votes": {
+      "main": {
+        "choice": "a"
+      },
+      "r1": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r2": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r3": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r4": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r5": {
+        "choice": "أدعم",
+        "type": "a"
+      }
+    },
+    "time": "٠٢:٠٤ م"
+  },
+  "abukarim": {
+    "name": "ابو كريم",
+    "votes": {
+      "r1": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r2": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r3": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r4": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r5": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "main": {
+        "choice": "a"
+      }
+    },
+    "time": "٠٢:٠٤ م"
+  },
+  "abuabdrh": {
+    "name": "ابو عبد الرحمن",
+    "votes": {
+      "main": {
+        "choice": "a"
+      },
+      "r1": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r3": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r4": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r5": {
+        "choice": "أدعم",
+        "type": "a"
+      },
+      "r2": {
+        "choice": "أدعم",
+        "type": "a"
+      }
+    },
+    "time": "٠٢:٥٠ م"
+  }
+}
